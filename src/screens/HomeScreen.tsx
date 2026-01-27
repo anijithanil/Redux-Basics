@@ -1,11 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const HomeScreen = () => {
+
+  const totalLikes = useSelector(state=>state.totalLikes)
+
   return (
-    <View>
+    <View  style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:'#2323'}}>
       <Text>HomeScreen</Text>
-      <Text>Total Likes: 9</Text>
+      <Text>Total Likes: {totalLikes}</Text>
     </View>
   )
 }
