@@ -1,9 +1,17 @@
+import { INCREASE_LIKES_BY_AMOUNT, INCREASE_LIKES_BY_ONE } from "../types"
+
 const initialState = {
-    totalLikes:10,
+    totalLikes:100,
+    userName:"Anijith"
 }
 
 export const dataReducer = (state = initialState, action) =>{
     switch(action.type) {
+        case INCREASE_LIKES_BY_ONE :
+            return {...state,totalLikes:state.totalLikes+1}
+
+        case INCREASE_LIKES_BY_AMOUNT :
+            return {...state,totalLikes:state.totalLikes+action.payload}
         default:
             return state
     }
