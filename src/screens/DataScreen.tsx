@@ -2,11 +2,12 @@ import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { increaseTotalLikes, increaseTotalLikesByAmount } from '../store/actions/dataActions';
+import { RootState } from '../store/store';
 
 const DataScreen = () => {
   const dispatch = useDispatch();
-  const totalLikes = useSelector(state=>state.dataReducer.totalLikes)
-  const userName = useSelector(state=>state.dataReducer.userName)
+  const totalLikes = useSelector((state:RootState)=>state.dataReducer.totalLikes)
+  const userName = useSelector((state:RootState)=>state.dataReducer.userName)
 
   return (
     <View style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:'#2323'}}>
