@@ -1,20 +1,13 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import { increaseTotalLikes, increaseTotalLikesByAmount } from '../store/actions/dataActions';
-import { RootState } from '../store/store';
 
 const DataScreen = () => {
-  const dispatch = useDispatch();
-  const totalLikes = useSelector((state:RootState)=>state.dataReducer.totalLikes)
-  const userName = useSelector((state:RootState)=>state.dataReducer.userName)
 
   return (
     <View style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:'#2323'}}>
       <Text>DataScreen</Text>
-      <Text>Total Likes for {userName}: {totalLikes}</Text>
-      <Button title="plus" onPress={()=>dispatch(increaseTotalLikes())}/>
-      <Button title="plus 10" onPress={()=>dispatch(increaseTotalLikesByAmount(10))}/>
+      <Text>Total Likes for :11</Text>
     </View>
   )
 }

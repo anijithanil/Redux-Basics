@@ -1,18 +1,20 @@
-import { INCREASE_LIKES_BY_AMOUNT, INCREASE_LIKES_BY_ONE } from "../types"
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    totalLikes:100,
-    userName:"Anijith"
+    totalLikes:100
 }
 
-export const dataReducer = (state = initialState, action) =>{
-    switch(action.type) {
-        case INCREASE_LIKES_BY_ONE :
-            return {...state,totalLikes:state.totalLikes+1}
-
-        case INCREASE_LIKES_BY_AMOUNT :
-            return {...state,totalLikes:state.totalLikes+action.payload}
-        default:
-            return state
+export const dataReducer = createSlice({
+    name:'dataSlice',
+    initialState:initialState,
+    reducers:{
+        increaseTotalLikes:(state)=>{
+            state.totalLikes+1
+        },
+        increaseTotalLikesByAmount:(state)=>{
+            state.totalLikes+=20
+        }
     }
-}
+})
+
+export const {increaseTotalLikes,increaseTotalLikesByAmount} = dataReducer.actions
