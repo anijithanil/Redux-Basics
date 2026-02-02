@@ -9,7 +9,7 @@ export const dataReducer = createSlice({
     initialState:initialState,
     reducers:{
         increaseTotalLikes:(state)=>{
-            state.totalLikes+1
+            state.totalLikes+=1
         },
         increaseTotalLikesByAmount:(state)=>{
             state.totalLikes+=20
